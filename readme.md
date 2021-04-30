@@ -1,4 +1,4 @@
-# FDairy Business
+# Dairy Business
 #### A website to manage dairy farm, may, 2021
 
 #### By **Silas Silikhe**
