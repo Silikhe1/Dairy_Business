@@ -13,9 +13,7 @@ const filterFunction = () => {
       td = tr[i].getElementsByTagName("td")[0];
       if (td) {
         txtValue = td.textContent || td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter)>-1)
-          
-        {
+        if (txtValue.toUpperCase().indexOf(filter)>-1){
           tr[i].style.display = "";
         } else {
           tr[i].style.display = "none";
@@ -51,11 +49,10 @@ let closeBtn = document.querySelector(".close-btn")
 modalBtn.onclick = function(){
   modal.style.display = "block"
 }
-// closeBtn.onclick = function(){
-//   modal.style.display = "none"
-// }
+ 
 window.onclick = function(e){
   if(e.target == modal){
     modal.style.display = "none"
   }
 }
+
