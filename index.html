@@ -77,7 +77,7 @@
             </tr>
             <tr>
                <td>A</td>
-               <td>128</td>
+               <td id="litresA">128</td>
                <td>45</td>
                <td>6456</td>
             </tr>
@@ -126,11 +126,12 @@
                       <input class="form-control" id="amount" name="amount" type="text" required />
                     </div>
                     <div>
-                      <label class="form-label" for="subject">Dristributor</label>
+                      <label class="form-label" for="subject">Year</label>
                       <select class="form-control" id="subject" name="subject">
-                        <option value="" selected disabled>Choose a Distributor</option>
+                        <option value="" selected disabled>Choose Leap Year or Normal Year</option>
                         <optgroup label="Option Group">
-                          <option value="subject-one">Brookside</option>
+                          <option value="normal">Leap Year</option>
+                          <option value="leap">Normal Year</option>
                         </optgroup>
                       </select>
                     </div>
@@ -155,7 +156,7 @@
                           </div>
                     </div>
                     <div class="btn-report">
-                      <button class="btn " style="width: 50%;" type="submit">Add Report</button>
+                      <button class="btn " id="btn" style="width: 50%;" type="submit">Add Report</button>
                     </div>
                   </form>
             </div>
