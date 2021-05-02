@@ -1,4 +1,4 @@
-# Favourite Band
+# 
 
 #### A website for my favourite band Sautisol, April, 2021
 
@@ -13,7 +13,6 @@ Your cows will make you rich if you monitor their milk production and sale, and 
 Brookside Dairies has signed a contract with you to buy milk at Ksh.45 per litre for one year.
 
 ## Setup/Installation Requirements
-
 - copy the url on arrow down
 - Clone on your computer
 - Go live or start your server
