@@ -265,3 +265,46 @@ nav{
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
   }
+
+  /* Form */
+ .form > div ~ div {
+    margin-top: 20px;
+}
+.form > div.is-hidden {
+    display: none;
+}
+.form-label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font: 0.875rem/1.5 sans-serif;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+/* Contact Form */
+.contact-form {
+    width: 100%;
+    /* max-width: 568px; */
+    padding: 40px;
+    background-color: #fefefe;
+    border-radius: 4px;
+    /* box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.125); */
+    box-sizing: border-box;
+}
+.contact-form--loading {
+    opacity: 0.5;
+    pointer-events: none;
+}
+/* .contact-form--sent > div ~ div {
+    margin: 0;
+}
+ */

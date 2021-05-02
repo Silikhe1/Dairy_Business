@@ -119,16 +119,40 @@
         </div>
         <div class="modal">
             <div class="modal-content">
-             
+                <form class="form contact-form" action="https://formspree.io/donnyburnside1@gmail.com">
+                    <div>
+                      <label class="form-label" for="name">Name</label>
+                      <input class="form-control" id="name" name="name" type="text" required />
+                    </div>
+                    <div>
+                      <label class="form-label" for="email">Email</label>
+                      <input class="form-control" id="email" name="email" type="email" required />
+                    </div>
+                    <div>
+                      <label class="form-label" for="subject">Subject</label>
+                      <select class="form-control" id="subject" name="subject" required>
+                        <option value="" selected disabled>Choose a Subject</option>
+                        <optgroup label="Option Group">
+                          <option value="subject-one">Subject One</option>
+                          <option value="subject-two">Subject Two</option>
+                          <option value="subject-three">Subject Three</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="form-label" for="message">Message</label>
+                      <textarea class="form-control" id="message" name="message" required></textarea>
+                    </div>
+                    <div>
+                      <label class="form-label" for="subscribe">Subscribe?</label>
+                      <input class="" id="subscribe" name="subscribe" type="checkbox" />
+                    </div>
+                    <div>
+                      <button class="modal-btn" type="submit">Submit</button>
+                      <button class="modal-btn" type="reset">Clear</button>
+                    </div>
+                  </form>
             </div>
-            <div class="modal-content">
-                <p>this is the text inside the modal</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut suscipit libero, repellat temporibus nostrum error fuga blanditiis ex aut labore nobis. Cumque est iusto labore hic, sunt ipsum vitae animi.</p>
-              </div>
-              <div class="modal-content">
-                <p>this is the text inside the modal</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut suscipit libero, repellat temporibus nostrum error fuga blanditiis ex aut labore nobis. Cumque est iusto labore hic, sunt ipsum vitae animi.</p>
-              </div>
           </div>
     </main>
     <script src="main.js"></script>
