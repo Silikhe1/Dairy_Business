@@ -1,0 +1,143 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    height: 5rem;
+    background: #466140;
+    width: 100%;
+    color: #fff;
+}
+
+.logo{
+    display: flex;
+    float: left;
+    /* font-size: 25px; */
+    margin: 10px 12%;
+}
+
+.logo h5{
+    font-family: 'Playfair Display', serif;
+    font-size: 33px;
+    color: linear-gradient(0.25turn, #000, #fff);
+    padding-left: 10px;
+    margin: 5% 0;
+}
+
+.logo img{
+    height: 13%;
+    width: 13%;
+}
+
+.logo span{
+    color: #000;
+}
+
+.nav{
+    float: right;
+}
+
+.nav ul{
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    list-style: none;
+    margin: 20px;
+}
+
+.nav ul li{
+    margin-left: 30px;
+}
+
+.bunner{
+    background: url(./images/landing.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    padding: 20px;
+}
+
+.records{
+    background: #95cd9e;
+    padding: 30px;
+    font-size: 25px;
+    align-content: center;
+    float: left;
+    margin: 2% 10%;
+    border-radius: 5px;
+}
+
+.records h5{
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    color: #fff;
+}
+
+.records p{
+    font-style: italic;
+}
+
+.records button{
+    padding: 20px;
+    font-weight: bold;
+    background: #466140;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+
+#myInput {
+
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 60%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+  }
+  
+  #myTable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-size: 18px; /* Increase font-size */
+  }
+  
+  #myTable th, #myTable td {
+    text-align: left; /* Left-align text */
+    padding: 12px; /* Add padding */
+  }
+  
+  #myTable tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #myTable tr.header, #myTable tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #f1f1f1;
+  }
+
+  .tables{
+      width: 80%;
+      margin: 5% 10%;
+      text-align: center;
+      border: 1px solid red;
+
+  }
+
+  .table-buttons{
+      display: flex;
+      margin-bottom: 10px;
+  }
+
+  .table-buttons button{
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px;
+      width: 50%;
+      font-size: 20px;
+  }

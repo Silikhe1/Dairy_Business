@@ -4,11 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Dairy Business</title>
 </head>
 <body>
+    <nav>
+        <div class="logo">
+            <img src="./images/logo.png" alt="">
+            <div>
+                <h5>SIL'S <span>DAIRY</span></h5>
+            </div>
+        </div>
+        <div class="nav">
+            <ul>
+                <li>HOME</li>
+                <li>ADD RECORD</li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="bunner">
+            <div class="records">
+                <p>Silikhe’s Dairy Farm</p>
+                <h5>Natural & Organic
+                    Milk</h5>
+                    <button>ADD NEW RECORD</button>
+            </div>
+        </div>
+        <div class="tables">
+            <div class="table-buttons">
+                <button class="right-btn">Total income</button>
+                <button class="left-btn">Total income</button>
+            </div>
+          <input type="text" id="myInput" onkeyup="filterFunction()" placeholder="Search for names..">
+          <table id="myTable">
+             <tr class="header">
+                <th style="width:20%;">Month</th>
+                <th style="width:20%;">Litres</th>
+                <th style="width:20%;">Ksh/Ltr</th>
+                <th style="width:40%;">Total</th>
+
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Eletrical Engineer</td>
+    <td>futterkiste@gmail.com</td>
+    <td>+49 92992924</td>
+
+  </tr>
+        <td>Francis Futterkiste</td>
+    <td>Eletrical Engineer</td>
+    <td>futterkiste.francis@gmail.com</td>
+    <td>+49 92992744</td>
+    <!-- <td>Germany</td> -->
+    <!-- <td>Berlin</td> -->
+</table>
+</div>
+    </main>
     <script src="main.js"></script>
 </body>
 </html>
