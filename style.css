@@ -102,23 +102,23 @@ nav{
   #myTable {
     border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
-    border: 1px solid #ddd; /* Add a grey border */
+    border: 1px solid #ddd;
     font-size: 18px; /* Increase font-size */
+    text-align: center;
   }
   
   #myTable th, #myTable td {
-    text-align: left; /* Left-align text */
-    padding: 12px; /* Add padding */
+    text-align: center;
+    padding: 12px;
   }
   
   #myTable tr {
-    /* Add a bottom border to all table rows */
-    border-bottom: 1px solid #ddd;
+
+    border-bottom: 1px solid #466140;
   }
   
   #myTable tr.header, #myTable tr:hover {
-    /* Add a grey background color to the table header and on hover */
-    background-color: #f1f1f1;
+    background-color: #95cd9e;
   }
 
   .tables{
