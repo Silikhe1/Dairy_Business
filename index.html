@@ -35,18 +35,19 @@
                     <button class="btn">ADD NEW RECORD</button>
             </div>
         </div>
+       <div class="table-cont">
         <div class="tables">
             <div class="table-buttons">
                 <button class="right-btn">Total income</button>
-                <button class="left-btn">Total income</button>
+                <button class="left-btn">Total Production</button>
             </div>
           <input type="text" id="myInput" onkeyup="filterFunction()" placeholder="Search for names..">
           <table id="myTable">
              <tr class="header">
-                <th style="width:25%;">Month</th>
-                <th style="width:25%;">Litres</th>
-                <th style="width:25%;">Ksh/Ltr</th>
-                <th style="width:25%;">Total</th>
+                <th class="th-style">Month</th>
+                <th class="th-style">Litres</th>
+                <th class="th-style">Ksh/Ltr</th>
+                <th class="th-style">Total</th>
              </tr>
              <tr>
                 <td>January</td>
@@ -67,10 +68,37 @@
                 <td >6456</td>
              </tr>
           </table>
+          <table id="myTable">
+            <tr class="header">
+               <th class="th-style">Month</th>
+               <th class="th-style">Litres</th>
+               <th class="th-style">Ksh/Ltr</th>
+               <th class="th-style">Total</th>
+            </tr>
+            <tr>
+               <td>January</td>
+               <td>128</td>
+               <td>45</td>
+               <td>6456</td>
+            </tr>
+            <tr>
+               <td>February</td>
+               <td>234</td>
+               <td>24</td>
+               <td>6456</td>
+            </tr>
+            <tr  class="total-tr">
+               <td></td>
+               <td></td>
+               <td>Total Income</td>
+               <td >6456</td>
+            </tr>
+         </table>
           <div class="btn-container">
             <button class="btn">Generate Report</button>
           </div>
         </div>
+       </div>
         <div class="about">
             <div class="about-content">
                 <h5>Milking Land of Milk & Love</h5>
@@ -89,6 +117,7 @@
                     <p>Programer</p>
             </div>
         </div>
+        
     </main>
     <script src="main.js"></script>
 </body>
