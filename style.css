@@ -266,16 +266,16 @@ nav{
     to {top:0; opacity:1}
   }
 
-  /* Form */
  .form > div ~ div {
     margin-top: 20px;
 }
 .form > div.is-hidden {
-    display: none;
+    /* display: none; */
 }
 .form-label {
+    color: #466140;
     display: inline-block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-size: 0.875rem;
     font-weight: 700;
 }
@@ -290,21 +290,33 @@ nav{
     border-radius: 4px;
     box-sizing: border-box;
 }
-/* Contact Form */
 .contact-form {
-    width: 100%;
+    /* width: 100%; */
     /* max-width: 568px; */
     padding: 40px;
-    background-color: #fefefe;
+    /* background-color: #fefefe; */
     border-radius: 4px;
     /* box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.125); */
     box-sizing: border-box;
 }
-.contact-form--loading {
+/* .contact-form--loading {
     opacity: 0.5;
     pointer-events: none;
-}
+} */
 /* .contact-form--sent > div ~ div {
     margin: 0;
 }
  */
+.form-wrap{
+    display: flex;
+    /* width: 100%; */
+    justify-content: space-around;
+}
+
+/* .form-lf{
+    float: right;
+}
+
+.form-rt{
+    float: right;
+} */
