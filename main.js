@@ -1,7 +1,8 @@
 const incomeBtn = document.querySelector(".right-btn");
 const pdtBtn = document.querySelector(".left-btn");
-var input, filter, table, tr, td, i, txtValue;
+let input, filter, table, tr, td, i, txtValue, prod;
 table = document.getElementById("myTable");
+prod = document.getElementById("myProd");
 tr = table.getElementsByTagName("tr");
 
 const filterFunction = () => {
@@ -30,6 +31,8 @@ const filterFunction = () => {
       pdtBtn.classList.remove("left-btn");
       pdtBtn.classList.add("right-btn");
       table.style.display = "block"
+      prod.style.display = "none"
+
   })
 
   pdtBtn.addEventListener("click", ()=>{
@@ -37,4 +40,22 @@ const filterFunction = () => {
     incomeBtn.classList.remove("left-btn");
     pdtBtn.classList.add("right-btn");
     table.style.display = "none"
+    prod.style.display = "block"
 })
+
+
+
+let modalBtn = document.getElementById("modal-btn")
+let modal = document.querySelector(".modal")
+let closeBtn = document.querySelector(".close-btn")
+modalBtn.onclick = function(){
+  modal.style.display = "block"
+}
+// closeBtn.onclick = function(){
+//   modal.style.display = "none"
+// }
+window.onclick = function(e){
+  if(e.target == modal){
+    modal.style.display = "none"
+  }
+}
