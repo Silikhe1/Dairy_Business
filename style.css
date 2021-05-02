@@ -205,7 +205,11 @@ nav{
 }
 
 .author h5{
-    font-size: 250%;
+    font-size: 30px;
+}
+
+.author h6{
+    font-size: 25px;
 }
 
 .img img{
