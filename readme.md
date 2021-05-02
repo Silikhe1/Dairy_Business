@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 # 
 
 #### A website for my favourite band Sautisol, April, 2021
+=======
+# Dairy Business
+#### A website to manage dairy farm, may, 2021
+>>>>>>> 52d0c70b31c688bbf5e7c1a5e22f04c4070a7fd5
 
 #### By **Silas Silikhe**
 
