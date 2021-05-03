@@ -123,6 +123,13 @@ nav {
   margin-bottom: 20px;
 }
 
+.mtr{
+    border-bottom: 2px solid #95cd9e;  
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
 #myTable tr {
   border-bottom: 2px solid #95cd9e;
 }
