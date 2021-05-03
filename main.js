@@ -27,6 +27,8 @@ const head = document.querySelector("#myTable");
 let milkAmount = amount.value;
 
 let arrMilk = [];
+let drop;
+
 
 const incomeBtn = document.querySelector(".right-btn");
 const pdtBtn = document.querySelector(".left-btn");
@@ -86,7 +88,18 @@ buttonS.addEventListener("click", (e) => {
   e.preventDefault();
   incomeOverTime();
   totalProduction();
-  //   console.log(too);
+
+
+  subject.addEventListener("change", (event) => {
+    let me = event.target.value;
+   if(me === "normal"){
+       drop += 0;
+   }else{
+       drop += 1;
+   }
+   console.log(drop);
+
+  });
   // alert(too)
 });
 
@@ -176,49 +189,6 @@ let incomeOverTime = () => {
   }
 };
 
-// let milkAmount = 0;
 
-// Calculates total production in litres per day
-// let totalProduction = ()=>{
-//     for (let i = 0; i < shedsProduction.length; i++){
-//         milkAmount = milkAmount + shedsProduction[i];
-//         console.log("Your production in Shed " +  shedsName[i] + " is " + shedsProduction[i] + " litres per day")
 
-//         let div = document.createElement('div');
-//         div.innerHTML = `<p>Your production in Shed ${shedsName[i]} is ${shedsProduction[i]}</p>`;
 
-//         shedsOutput.appendChild(div);
-
-//     }
-//     console.log("\n");
-//     console.log("The total production is " + milkAmount + " litres per day\n");
-//     return milkAmount;
-
-// }
-
-const too = subject.addEventListener("change", (event) => {
-  let me = event.target.value;
-  console.log(me);
-  return me;
-});
-
-//   alert(too)
-
-let litres = [510, 308, 486, 572];
-let sheds = ["A", "B", "C", "D"];
-let amountLtr;
-
-// const totalProduction = () => {
-//     for (let i = 0; i < sheds.length; i++){
-//         amountLtr = amountLtr + litres[i];
-
-//         console.log(amountLtr)
-//         // let div = document.createElement('div');
-//         // div.innerHTML = `<p>Your production in Shed ${shedsName[i]} is ${shedsProduction[i]}</p>`;
-
-//         // shedsOutput.appendChild(div);
-
-//     }
-
-//     return amountLtr;
-// }
