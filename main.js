@@ -23,12 +23,11 @@ const total4 = document.querySelector("#total4");
 
 const head = document.querySelector("#myTable");
 
-
 let milkAmount = amount.value;
 
 let arrMilk = [];
 let drop;
-
+let summ = 0;
 
 const incomeBtn = document.querySelector(".right-btn");
 const pdtBtn = document.querySelector(".left-btn");
@@ -89,16 +88,14 @@ buttonS.addEventListener("click", (e) => {
   incomeOverTime();
   totalProduction();
 
-
   subject.addEventListener("change", (event) => {
     let me = event.target.value;
-   if(me === "normal"){
-       drop += 0;
-   }else{
-       drop += 1;
-   }
-   console.log(drop);
-
+    if (me === "normal") {
+      drop += 0;
+    } else {
+      drop += 1;
+    }
+    console.log(drop);
   });
   // alert(too)
 });
@@ -125,7 +122,11 @@ const totalProduction = () => {
   let t3 = (total3.textContent = milkAmount * shade3);
   let t4 = (total4.textContent = milkAmount * shade4);
 
-  arrMilk.push(t1, t2, t3, t4);
+  //   for(let i; i < arrMilk.length; i++){
+  //       summ += arrMilk[i]
+  //   }
+  summ += t1 + t2 + t3 + t4;
+    arrMilk.push(t1, t2, t3, t4);
 };
 
 let months = {
@@ -144,51 +145,64 @@ let months = {
 };
 
 let incomeOverTime = () => {
+    let t1 = (total1.textContent = milkAmount * shade1);
+  let t2 = (total2.textContent = milkAmount * shade2);
+  let t3 = (total3.textContent = milkAmount * shade3);
+  let t4 = (total4.textContent = milkAmount * shade4);
+
+  let summ = t1 + t2 + t3 +t4
+
+  let milkAmount = amount.value;
   console.log(arrMilk);
 
-  let sumLitres = arrMilk.reduce(function (a, b) {
-    return a + b;
-  }, 0);
+//   console.log(milkAmount);
 
-//   alert(sumLitres);
+//   let sumLitres = arrMilk.reduce((a, b)=> {
+//     console.log(a + b);
+//     return a + b;
+//   }, 0);
 
-  var total = 0;
-  for (var i in arrMilk) {
-    total += arrMilk[i];
-  }
 
-//   alert(total);
+//   var total = 0;
+//   for (var i in arrMilk) {
+//     total += arrMilk[i];
+//   }
+
+  //   alert(total);
   let week = 7;
   let year = 365;
 
-  weeklyTotal = week * milkAmount * sumLitres;
-  yearlyTotal = year * milkAmount * sumLitres;
+  let date = new Date();
+  let newMonth = date.toLocaleString("default", { month: "long" });
+  //   alert(date.toLocaleString('default', { month: 'long' }))
 
-//   alert(weeklyTotal);
+  let weeklyTotal = week * milkAmount * summ;
+  let yearlyTotal = year * milkAmount * summ;
+
+  //   alert(weeklyTotal);
 
   for (const [key, value] of Object.entries(months)) {
     let tr = document.createElement("tr");
     // tr.classList.add("");
     tr.innerHTML = `
-    <tr style="width:100%%>
-    <td style="width:25%">
+    <tr>
+    <td>
     ${key}
     </td>
-    <td style="width:25%>0</td>
-    <td style="width:25%>
+    <td>${summ}</td>
+    <td>
     ${milkAmount}
     </td>
-    <td style="width:25%>
-    ${value * sumLitres * milkAmount}
+    <td>
+    ${value * milkAmount}
     </td>
     </tr>
     
 `;
 
+    // console.log("litres is " + summ);
+    // console.log("pert/lita is " + milkAmount);
+    // console.log("total is " + value * summ * milkAmount);
     head.appendChild(tr);
   }
 };
-
-
-
-
