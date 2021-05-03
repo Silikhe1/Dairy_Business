@@ -1,127 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="./images/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Dairy Business</title>
 </head>
+
 <body>
     <nav>
         <div class="logo">
             <div>
-                <h5>SIL'S 
+                <h5>SIL'S
                     <img src="./images/logo.png" alt="">
-                    <span>DAIRY</span></h5>
+                    <span>DAIRY</span>
+                </h5>
             </div>
         </div>
     </nav>
     <main>
-    
+
         <div class="bunner">
             <div class="records">
                 <p>Silikhe’s Dairy Farm</p>
                 <h5>Natural & Organic
                     Milk</h5>
-                    <button id="modal-btn" class="btn">ADD NEW RECORD</button>
+                <button id="modal-btn" class="btn">ADD NEW RECORD</button>
             </div>
         </div>
-       <div class="table-cont">
-        <div class="tables">
-            <div class="table-buttons">
-                <button class="right-btn">Total income</button>
-                <button class="left-btn">Total Production</button>
+        <div class="table-cont">
+            <div class="tables">
+                <div class="table-buttons">
+                    <button class="right-btn">Total income</button>
+                    <button class="left-btn">Total Production</button>
+                </div>
+                <input type="text" id="myInput" onkeyup="filterFunction()" placeholder="Search for names..">
+                <table id="myTable">
+                    <tr class="header">
+                        <th class="th-style">Month</th>
+                        <th class="th-style">Litres</th>
+                        <th class="th-style">Ksh/Ltr</th>
+                        <th class="th-style">Total</th>
+                    </tr>
+                    <tr>
+                        <td>January</td>
+                        <td>0</td>
+                        <td class="amo">0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>o</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="total-tr">
+                        <td></td>
+                        <td></td>
+                        <td>Total Income</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+                <table id="myProd">
+                    <tr class="header">
+                        <th class="th-style">Shade</th>
+                        <th class="th-style">Litres</th>
+                        <th class="th-style">Ksh/Ltr</th>
+                        <th class="th-style">Total</th>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td id="litreA">0</td>
+                        <td class="amountA">0</td>
+                        <td id="total2">0</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td id="litreB">0</td>
+                        <td class="amountB">0</td>
+                        <td id="total2">0</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td id="litreC">0</td>
+                        <td class="amountC">0</td>
+                        <td id="total3">0</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td id="litreD">0</td>
+                        <td class="amountD">0</td>
+                        <td id="total4">0</td>
+                    </tr>
+                    <tr class="total-tr">
+                        <td></td>
+                        <td></td>
+                        <td>Total Income</td>
+                        <td id="total4">0</td>
+                    </tr>
+                </table>
+                <div class="btn-container">
+                    <button class="btn">Generate Report</button>
+                </div>
             </div>
-          <input type="text" id="myInput" onkeyup="filterFunction()" placeholder="Search for names..">
-          <table id="myTable">
-             <tr class="header">
-                <th class="th-style">Month</th>
-                <th class="th-style">Litres</th>
-                <th class="th-style">Ksh/Ltr</th>
-                <th class="th-style">Total</th>
-             </tr>
-             <tr>
-                <td>January</td>
-                <td>128</td>
-                <td class="amountA">0</td>
-                <td>6456</td>
-             </tr>
-             <tr>
-                <td>February</td>
-                <td>234</td>
-                <td>24</td>
-                <td>6456</td>
-             </tr>
-             <tr  class="total-tr">
-                <td></td>
-                <td></td>
-                <td>Total Income</td>
-                <td >6456</td>
-             </tr>
-          </table>
-          <table id="myProd">
-            <tr class="header">
-               <th class="th-style">Shade</th>
-               <th class="th-style">Litres</th>
-               <th class="th-style">Ksh/Ltr</th>
-               <th class="th-style">Total</th>
-            </tr>
-            <tr>
-               <td>A</td>
-               <td id="litreA">0</td>
-               <td class="amountA">45</td>
-               <td>6456</td>
-            </tr>
-            <tr>
-               <td>B</td>
-               <td id="litreB">0</td>
-               <td>24</td>
-               <td>6456</td>
-            </tr>
-            <tr>
-                <td>C</td>
-                <td id="litreC">0</td>
-                <td>24</td>
-                <td>6456</td>
-             </tr>
-             <tr>
-                <td>D</td>
-                <td id="litreD">0</td>
-                <td>24</td>
-                <td>6456</td>
-             </tr>
-            <tr  class="total-tr">
-               <td></td>
-               <td></td>
-               <td>Total Income</td>
-               <td >6456</td>
-            </tr>
-         </table>
-          <div class="btn-container">
-            <button class="btn">Generate Report</button>
-          </div>
         </div>
-       </div>
         <div class="about">
             <div class="about-content">
                 <h5>Milking Land of Milk & Love</h5>
-                    <p>
-                        Dairy producers worldwide face similar challenges around animal welfare, farm profitability, food safety and work efficiency. Discover how our customers are solving these challenges. Also known as the land of milk and honey for its rich and vibrant farming tradition.
-                    </p>
+                <p>
+                    Dairy producers worldwide face similar challenges around animal welfare, farm profitability, food
+                    safety and work efficiency. Discover how our customers are solving these challenges. Also known as
+                    the land of milk and honey for its rich and vibrant farming tradition.
+                </p>
             </div>
         </div>
         <div class="author">
-           <div class="">
+            <div class="">
                 <h5>Meet The Farmer</h5>
                 <div class="img">
                     <img src="./images/me.png" alt="">
                 </div>
                 <h6>Silas Silikhe</h6>
-                    <p>Programer</p>
+                <p>Programer</p>
             </div>
         </div>
         <div class="modal">
@@ -129,46 +134,47 @@
                 <form class="form contact-form" action="">
                     <h1>Milk Production Details</h1>
                     <div>
-                      <label class="form-label" for="amount">Amount</label>
-                      <input class="form-control" id="amount" name="amount" type="text" required />
+                        <label class="form-label" for="amount">Amount</label>
+                        <input class="form-control" id="amount" name="amount" value="45" type="text" required />
                     </div>
                     <div>
-                      <label class="form-label" for="subject">Year</label>
-                      <select class="form-control" id="subject" name="subject">
-                        <option value="" selected disabled>Choose Leap Year or Normal Year</option>
-                        <optgroup label="Option Group">
-                          <option value="normal">Leap Year</option>
-                          <option value="leap">Normal Year</option>
-                        </optgroup>
-                      </select>
+                        <label class="form-label" for="subject">Year</label>
+                        <select class="form-control" id="subject" name="subject">
+                            <option value="" selected disabled>Choose Leap Year or Normal Year</option>
+                            <optgroup label="Option Group">
+                                <option value="normal">Leap Year</option>
+                                <option value="leap">Normal Year</option>
+                            </optgroup>
+                        </select>
                     </div>
                     <div class="form-wrap">
                         <div>
                             <label class="form-label" for="ShadeA">Shade A</label>
                             <input class="form-control form-rt" id="shadeA" name="shadeA" type="text" required />
-                          </div>
-                          <div>
+                        </div>
+                        <div>
                             <label class="form-label" for="shadeB">Shade B</label>
                             <input class="form-control form-lf" id="shadeB" name="shadeB" type="text" required />
-                          </div>
+                        </div>
                     </div>
                     <div class="form-wrap">
                         <div>
                             <label class="form-label" for="ShadeC">Shade C</label>
                             <input class="form-control form-rt" id="shadeC" name="shadeC" type="text" required />
-                          </div>
-                          <div>
+                        </div>
+                        <div>
                             <label class="form-label" for="shadeD">Shade D</label>
                             <input class="form-control form-lf" id="shadeD" name="shadeD" type="text" required />
-                          </div>
+                        </div>
                     </div>
                     <div class="btn-report">
-                      <button class="btn " id="btn" style="width: 50%;" type="submit">Add Report</button>
+                        <button class="btn " id="btn" style="width: 50%;" type="submit">Add Report</button>
                     </div>
-                  </form>
+                </form>
             </div>
-          </div>
+        </div>
     </main>
     <script src="main.js"></script>
 </body>
+
 </html>

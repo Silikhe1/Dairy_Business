@@ -4,14 +4,16 @@ const shadeB = document.getElementById("shadeB");
 const shadeC = document.getElementById("shadeC");
 const shadeD = document.querySelector("#shadeD");
 const buttonS = document.querySelector("#btn");
-const amountA = document.querySelectorAll("amountA");
 const year = document.querySelector("#subject");
 // const litresA = document.querySelector("#litresA");
 const litreA = document.getElementById("litreA");
 const litreB = document.getElementById("litreB");
 const litreC = document.getElementById("litreC");
 const litreD = document.querySelector("#litreD");
-
+const amountA = document.querySelector(".amountA");
+const amountB = document.querySelector(".amountB");
+const amountC = document.querySelector(".amountC");
+const amountD = document.querySelector(".amountD");
 
 const incomeBtn = document.querySelector(".right-btn");
 const pdtBtn = document.querySelector(".left-btn");
@@ -21,89 +23,94 @@ prod = document.getElementById("myProd");
 tr = table.getElementsByTagName("tr");
 
 const filterFunction = () => {
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
 
-      for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[0];
-      if (td) {
-        txtValue = td.textContent || td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter)>-1){
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
-          
-        }
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
       }
     }
   }
-  
-  incomeBtn.addEventListener("click", ()=>{
-      incomeBtn.classList.add("left-btn");
-      pdtBtn.classList.remove("left-btn");
-      pdtBtn.classList.add("right-btn");
-      table.style.display = "block"
-      prod.style.display = "none"
-  })
+};
 
-  pdtBtn.addEventListener("click", ()=>{
-    pdtBtn.classList.add("left-btn");
-    incomeBtn.classList.remove("left-btn");
-    pdtBtn.classList.add("right-btn");
-    table.style.display = "none"
-    prod.style.display = "block"
-})
+incomeBtn.addEventListener("click", () => {
+  incomeBtn.classList.add("left-btn");
+  pdtBtn.classList.remove("left-btn");
+  pdtBtn.classList.add("right-btn");
+  table.style.display = "block";
+  prod.style.display = "none";
+});
 
+pdtBtn.addEventListener("click", () => {
+  pdtBtn.classList.add("left-btn");
+  incomeBtn.classList.remove("left-btn");
+  pdtBtn.classList.add("right-btn");
+  table.style.display = "none";
+  prod.style.display = "block";
+});
 
-let modalBtn = document.getElementById("modal-btn")
-let modal = document.querySelector(".modal")
-let closeBtn = document.querySelector(".close-btn")
-modalBtn.onclick = function(){
-  modal.style.display = "block"
-}
- 
-window.onclick = function(e){
-  if(e.target == modal){
-    modal.style.display = "none"
+let modalBtn = document.getElementById("modal-btn");
+let modal = document.querySelector(".modal");
+let closeBtn = document.querySelector(".close-btn");
+modalBtn.onclick = function () {
+  modal.style.display = "block";
+};
+
+window.onclick = function (e) {
+  if (e.target == modal) {
+    modal.style.display = "none";
   }
-}
+};
 
+buttonS.addEventListener("click", (e) => {
+  modal.style.display = "none";
+  e.preventDefault();
 
-
-buttonS.addEventListener("click", (e)=>{
-    modal.style.display = "none"
-    e.preventDefault()
-
-
-    totalProduction();
-    console.log(too)
-    alert(too)
-
-})
-
+  totalProduction();
+  console.log(too);
+  // alert(too)
+});
 
 const totalProduction = () => {
-    let shade1 = shadeA.value;
-    let shade2 = shadeB.value;
-    let shade3 = shadeC.value;
-    let shade4 = shadeD.value;
-    litreA.textContent = shade1;
-    litreB.textContent = shade2;
-    litreC.textContent = shade3;
-    litreD.textContent = shade4;
-    amountA.innerText = amount.value
+  let shade1 = shadeA.value;
+  let shade2 = shadeB.value;
+  let shade3 = shadeC.value;
+  let shade4 = shadeD.value;
+  litreA.textContent = shade1;
+  litreB.textContent = shade2;
+  litreC.textContent = shade3;
+  litreD.textContent = shade4;
+  let milkAmount = amount.value;
 
-}
+  amountA.textContent = milkAmount;
+  amountB.textContent = milkAmount;
+  amountC.textContent = milkAmount;
+  amountD.textContent = milkAmount;
+
+  amountA.textContent = milkAmount * shade1;
+  amountB.textContent = milkAmount * shade2;
+  amountC.textContent = milkAmount * shade2;
+  amountD.textContent = milkAmount;
 
 
+  Array.from(document.querySelectorAll(".amountA")).find(
+    (el) => el.textContent === milkAmount
+  );
+};
 
 // let months = {
 //      January: 31,
 //      February: 29,
 //      March: 31,
 //      April: 30,
-//      May: 31, 
-//      June: 30, 
+//      May: 31,
+//      June: 30,
 //      July: 31,
 //      August: 31,
 //      September: 30,
@@ -114,21 +121,19 @@ const totalProduction = () => {
 
 // let selling_price = amount.value
 
-//   let incomeOverTime = (selling_price) => {      
-    
+//   let incomeOverTime = (selling_price) => {
+
 //     let weeklyTotal = 1;
 //     let yearlyTotal = 1;
 
 //     weeklyTotal = week * selling_price * totalLitres;
 //     yearlyTotal = year * selling_price * totalLitres;
-    
 
 //     let div3 = document.createElement('div');
 //         div3.innerHTML = `<p>Your weekly income will be Ksh ${weeklyTotal}</p>`;
 
 //         weeklyIncome.appendChild(div3);
 
-    
 //     let div4 = document.createElement('div');
 //         div4.innerHTML = `<p>Your yearly income will be Ksh ${yearlyTotal}</p>`;
 
@@ -141,7 +146,7 @@ const totalProduction = () => {
 //         div2.innerHTML = `<p>Your total income for  ${key} is ${value * totalLitres * selling_price}</p>`;
 
 //         monthlyIncome.appendChild(div2);
-//       }    
+//       }
 // }
 
 // let totalLitres = 0;
@@ -161,14 +166,14 @@ const totalProduction = () => {
 //     console.log("\n");
 //     console.log("The total production is " + totalLitres + " litres per day\n");
 //     return totalLitres;
-   
+
 // }
 
-const too = subject.addEventListener('change', (event) => {
-    let me = event.target.value;
-    console.log(me)
-    return me;  
-  });
+const too = subject.addEventListener("change", (event) => {
+  let me = event.target.value;
+  console.log(me);
+  return me;
+});
 
 //   alert(too)
 
@@ -176,11 +181,9 @@ let litres = [510, 308, 486, 572];
 let sheds = ["A", "B", "C", "D"];
 let amountLtr;
 
-
 // const totalProduction = () => {
 //     for (let i = 0; i < sheds.length; i++){
 //         amountLtr = amountLtr + litres[i];
-
 
 //         console.log(amountLtr)
 //         // let div = document.createElement('div');
@@ -192,4 +195,3 @@ let amountLtr;
 
 //     return amountLtr;
 // }
-
