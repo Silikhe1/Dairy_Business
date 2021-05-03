@@ -4,9 +4,13 @@ const shadeB = document.getElementById("shadeB");
 const shadeC = document.getElementById("shadeC");
 const shadeD = document.querySelector("#shadeD");
 const buttonS = document.querySelector("#btn");
+const amountA = document.querySelectorAll("amountA");
 const year = document.querySelector("#subject");
-// const modal-clo = document.querySelector(".modal");
-const litresA = document.querySelector("#litresA");
+// const litresA = document.querySelector("#litresA");
+const litreA = document.getElementById("litreA");
+const litreB = document.getElementById("litreB");
+const litreC = document.getElementById("litreC");
+const litreD = document.querySelector("#litreD");
 
 
 const incomeBtn = document.querySelector(".right-btn");
@@ -40,9 +44,6 @@ const filterFunction = () => {
       pdtBtn.classList.add("right-btn");
       table.style.display = "block"
       prod.style.display = "none"
-   
-    //   result.textContent = `You like ${event.target.value}`;
-alert()
   })
 
   pdtBtn.addEventListener("click", ()=>{
@@ -72,11 +73,28 @@ window.onclick = function(e){
 buttonS.addEventListener("click", (e)=>{
     modal.style.display = "none"
     e.preventDefault()
-    // totalProduction()
+
+
+    totalProduction();
     console.log(too)
     alert(too)
 
 })
+
+
+const totalProduction = () => {
+    let shade1 = shadeA.value;
+    let shade2 = shadeB.value;
+    let shade3 = shadeC.value;
+    let shade4 = shadeD.value;
+    litreA.textContent = shade1;
+    litreB.textContent = shade2;
+    litreC.textContent = shade3;
+    litreD.textContent = shade4;
+    amountA.innerText = amount.value
+
+}
+
 
 
 // let months = {
@@ -154,17 +172,24 @@ const too = subject.addEventListener('change', (event) => {
 
 //   alert(too)
 
-let 
-const totalProduction = () => {
-    for (let i = 0; i < shedsProduction.length; i++){
-        totalLitres = totalLitres + shedsProduction[i];
+let litres = [510, 308, 486, 572];
+let sheds = ["A", "B", "C", "D"];
+let amountLtr;
 
-        let div = document.createElement('div');
-        div.innerHTML = `<p>Your production in Shed ${shedsName[i]} is ${shedsProduction[i]}</p>`;
 
-        shedsOutput.appendChild(div);
+// const totalProduction = () => {
+//     for (let i = 0; i < sheds.length; i++){
+//         amountLtr = amountLtr + litres[i];
 
-    }
 
-    return totalLitres;
-}
+//         console.log(amountLtr)
+//         // let div = document.createElement('div');
+//         // div.innerHTML = `<p>Your production in Shed ${shedsName[i]} is ${shedsProduction[i]}</p>`;
+
+//         // shedsOutput.appendChild(div);
+
+//     }
+
+//     return amountLtr;
+// }
+
