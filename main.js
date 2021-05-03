@@ -10,10 +10,16 @@ const litreA = document.getElementById("litreA");
 const litreB = document.getElementById("litreB");
 const litreC = document.getElementById("litreC");
 const litreD = document.querySelector("#litreD");
+
 const amountA = document.querySelector(".amountA");
 const amountB = document.querySelector(".amountB");
 const amountC = document.querySelector(".amountC");
 const amountD = document.querySelector(".amountD");
+
+const total1 = document.querySelector("#total1");
+const total2 = document.querySelector("#total2");
+const total3 = document.querySelector("#total3");
+const total4 = document.querySelector("#total4");
 
 const incomeBtn = document.querySelector(".right-btn");
 const pdtBtn = document.querySelector(".left-btn");
@@ -77,6 +83,10 @@ buttonS.addEventListener("click", (e) => {
   // alert(too)
 });
 
+let milkAmount = amount.value;
+
+let arr = []
+
 const totalProduction = () => {
   let shade1 = shadeA.value;
   let shade2 = shadeB.value;
@@ -86,75 +96,74 @@ const totalProduction = () => {
   litreB.textContent = shade2;
   litreC.textContent = shade3;
   litreD.textContent = shade4;
-  let milkAmount = amount.value;
 
   amountA.textContent = milkAmount;
   amountB.textContent = milkAmount;
   amountC.textContent = milkAmount;
   amountD.textContent = milkAmount;
 
-  amountA.textContent = milkAmount * shade1;
-  amountB.textContent = milkAmount * shade2;
-  amountC.textContent = milkAmount * shade2;
-  amountD.textContent = milkAmount;
+  let t1 = total1.textContent = milkAmount * shade1;
+  let t2 = total2.textContent = milkAmount * shade2;
+  let t3 = total3.textContent = milkAmount * shade3;
+  let t4 = total4.textContent = milkAmount * shade4;
 
-
-  Array.from(document.querySelectorAll(".amountA")).find(
-    (el) => el.textContent === milkAmount
-  );
+  arr.push(t1, t2, t3, t4)
 };
 
-// let months = {
-//      January: 31,
-//      February: 29,
-//      March: 31,
-//      April: 30,
-//      May: 31,
-//      June: 30,
-//      July: 31,
-//      August: 31,
-//      September: 30,
-//      October: 31,
-//      November: 30,
-//      December: 31
-//   }
+let months = {
+  January: 31,
+  February: 29,
+  March: 31,
+  April: 30,
+  May: 31,
+  June: 30,
+  July: 31,
+  August: 31,
+  September: 30,
+  October: 31,
+  November: 30,
+  December: 31,
+};
 
-// let selling_price = amount.value
+let incomeOverTime = (milkAmount) => {
 
-//   let incomeOverTime = (selling_price) => {
+    let sumLitres = arr.reduce(function (a, b) {
+        return a + b;
+    }, 0);
 
-//     let weeklyTotal = 1;
-//     let yearlyTotal = 1;
+  let week = 7;
+  let year = 365;
 
-//     weeklyTotal = week * selling_price * totalLitres;
-//     yearlyTotal = year * selling_price * totalLitres;
+  weeklyTotal = week * milkAmount * milkAmount;
+  yearlyTotal = year * milkAmount * milkAmount;
 
-//     let div3 = document.createElement('div');
-//         div3.innerHTML = `<p>Your weekly income will be Ksh ${weeklyTotal}</p>`;
+//   let div3 = document.createElement("div");
+//   div3.innerHTML = `<p>Your weekly income will be Ksh ${weeklyTotal}</p>`;
 
-//         weeklyIncome.appendChild(div3);
+//   weeklyIncome.appendChild(div3);
 
-//     let div4 = document.createElement('div');
-//         div4.innerHTML = `<p>Your yearly income will be Ksh ${yearlyTotal}</p>`;
+//   let div4 = document.createElement("div");
+//   div4.innerHTML = `<p>Your yearly income will be Ksh ${yearlyTotal}</p>`;
 
-//         weeklyIncome.appendChild(div4);
+//   weeklyIncome.appendChild(div4);
 
-//     // Iterates over the months object and prints the total amount of money to be made
-//     for (const [key, value] of Object.entries(months)) {
+  // Iterates over the months object and prints the total amount of money to be made
+  for (const [key, value] of Object.entries(months)) {
+    let div2 = document.createElement("div");
+    div2.innerHTML = `<p>Your total income for  ${key} is ${
+      value * milkAmount * milkAmount
+    }</p>`;
 
-//         let div2 = document.createElement('div');
-//         div2.innerHTML = `<p>Your total income for  ${key} is ${value * totalLitres * selling_price}</p>`;
+    monthlyIncome.appendChild(div2);
+  }
+};
 
-//         monthlyIncome.appendChild(div2);
-//       }
-// }
-
-// let totalLitres = 0;
+// let milkAmount = 0;
 
 // Calculates total production in litres per day
 // let totalProduction = ()=>{
 //     for (let i = 0; i < shedsProduction.length; i++){
-//         totalLitres = totalLitres + shedsProduction[i];
+//         milkAmount = milkAmount + shedsProduction[i];
 //         console.log("Your production in Shed " +  shedsName[i] + " is " + shedsProduction[i] + " litres per day")
 
 //         let div = document.createElement('div');
@@ -164,8 +173,8 @@ const totalProduction = () => {
 
 //     }
 //     console.log("\n");
-//     console.log("The total production is " + totalLitres + " litres per day\n");
-//     return totalLitres;
+//     console.log("The total production is " + milkAmount + " litres per day\n");
+//     return milkAmount;
 
 // }
 
