@@ -33,7 +33,7 @@
                 <button id="modal-btn" class="btn">ADD NEW RECORD</button>
             </div>
         </div>
-        <div class="table-cont">
+        <div id="pdf" class="table-cont">
             <div class="tables">
                 <div class="table-buttons">
                     <button class="right-btn">Total income</button>
@@ -63,13 +63,13 @@
                         <td></td>
                         <td>Total Monthly Income</td>
                         <td></td>
-                        <td>0</td>
+                        <td id="monthly">0</td>
                     </tr>
                     <tr class="total-tr">
                         <td></td>
                         <td>Total Yearly Income</td>
                         <td></td>
-                        <td>0</td>
+                        <td id="yearly">0</td>
                     </tr>
                 </table>
                 <table id="myProd">
@@ -111,10 +111,56 @@
                     </tr>
                 </table>
                 <div class="btn-container">
-                    <button class="btn">Generate Report</button>
+                    <button onclick="window.print()" class="btn">Generate Report</button>
                 </div>
             </div>
         </div>
+        <div class="invoice-card" id="invoice">
+            <div class="invoice-title">
+              <div id="main-title">
+                <h4>INVOICE</h4>
+                <span>#89 292</span>
+              </div>
+              
+              <span id="date">16/02/2019</span>
+            </div>
+            
+            <div class="invoice-details">
+              <table class="invoice-table">
+                <thead>
+                  <tr>
+                    <td>PRODUCT</td>
+                    <td>UNIT</td>
+                    <td>PRICE</td>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  <tr class="row-data">
+                    <td>Expected income <span>(down)</span></td>
+                    <td id="unit">1</td>
+                    <td>2.90</td>
+                  </tr>
+                  
+                  <tr class="row-data">
+                    <td>Actual Income <span>(up)</span></td>
+                    <td id="unit">2</td>
+                    <td>Ksh. 123578987</td>
+                  </tr>
+                  
+                  <tr class="calc-row">
+                    <td colspan="2">Total</td>
+                    <td>Ksh. 123578987</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div class="invoice-footer">
+              <button class="btn btn-secondary" id="later">Cancel</button>
+              <button class="btn btn-primary">Ok</button>
+            </div>
+          </div>
         <div class="about">
             <div class="about-content">
                 <h5>Milking Land of Milk & Love</h5>

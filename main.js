@@ -23,6 +23,9 @@ const total4 = document.querySelector("#total4");
 
 const head = document.querySelector("#myTable");
 
+const monthly = document.querySelector("#monthly");
+const yearly = document.querySelector("#yearly");
+
 let milkAmount = amount.value;
 
 let arrMilk = [];
@@ -103,10 +106,11 @@ buttonS.addEventListener("click", (e) => {
 // let milkAmount = amount.value;
 
 const totalProduction = () => {
-  let shade1 = shadeA.value;
-  let shade2 = shadeB.value;
-  let shade3 = shadeC.value;
-  let shade4 = shadeD.value;
+    let shade1 = shadeA.value;
+    let shade2 = shadeB.value;
+    let shade3 = shadeC.value;
+    let shade4 = shadeD.value;
+
   litreA.textContent = shade1;
   litreB.textContent = shade2;
   litreC.textContent = shade3;
@@ -126,7 +130,7 @@ const totalProduction = () => {
   //       summ += arrMilk[i]
   //   }
   summ += t1 + t2 + t3 + t4;
-    arrMilk.push(t1, t2, t3, t4);
+  arrMilk.push(t1, t2, t3, t4);
 };
 
 let months = {
@@ -145,45 +149,50 @@ let months = {
 };
 
 let incomeOverTime = () => {
-    let t1 = (total1.textContent = milkAmount * shade1);
+  let shade1 = shadeA.value;
+  let shade2 = shadeB.value;
+  let shade3 = shadeC.value;
+  let shade4 = shadeD.value;
+
+  let milkAmount = amount.value;
+
+  let t1 = (total1.textContent = milkAmount * shade1);
   let t2 = (total2.textContent = milkAmount * shade2);
   let t3 = (total3.textContent = milkAmount * shade3);
   let t4 = (total4.textContent = milkAmount * shade4);
 
-  let summ = t1 + t2 + t3 +t4
+  let summ = t1 + t2 + t3 + t4;
 
-  let milkAmount = amount.value;
-  console.log(arrMilk);
+  console.log(summ);
 
-//   console.log(milkAmount);
+  //   console.log(milkAmount);
 
-//   let sumLitres = arrMilk.reduce((a, b)=> {
-//     console.log(a + b);
-//     return a + b;
-//   }, 0);
+  //   let sumLitres = arrMilk.reduce((a, b)=> {
+  //     console.log(a + b);
+  //     return a + b;
+  //   }, 0);
 
+  //   var total = 0;
+  //   for (var i in arrMilk) {
+  //     total += arrMilk[i];
+  //   }
 
-//   var total = 0;
-//   for (var i in arrMilk) {
-//     total += arrMilk[i];
-//   }
+  let tot = shade4 + shade3 + shade2 + shade1
 
-  //   alert(total);
   let week = 7;
   let year = 365;
 
   let date = new Date();
   let newMonth = date.toLocaleString("default", { month: "long" });
-  //   alert(date.toLocaleString('default', { month: 'long' }))
 
   let weeklyTotal = week * milkAmount * summ;
   let yearlyTotal = year * milkAmount * summ;
 
-  //   alert(weeklyTotal);
+  monthly.textContent = weeklyTotal;
+  yearly.textContent = yearlyTotal;
 
   for (const [key, value] of Object.entries(months)) {
     let tr = document.createElement("tr");
-    // tr.classList.add("");
     tr.innerHTML = `
     <tr>
     <td>
@@ -194,15 +203,34 @@ let incomeOverTime = () => {
     ${milkAmount}
     </td>
     <td>
-    ${value * milkAmount}
+    ${value * summ}
     </td>
     </tr>
     
 `;
 
-    // console.log("litres is " + summ);
-    // console.log("pert/lita is " + milkAmount);
-    // console.log("total is " + value * summ * milkAmount);
     head.appendChild(tr);
   }
 };
+
+
+const generatePdf = () => {
+var prtContent = document.getElementById("pdf");
+var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+WinPrint.document.write(prtContent.innerHTML);
+WinPrint.document.close();
+WinPrint.focus();
+WinPrint.print();
+WinPrint.close();
+}
+
+
+
+const rateChange = () => {
+    var invoice = document.getElementById("invoice");
+    if(milkAmount > 45){
+      invoice.display = "block"
+    }else{
+        invoice.display = "none"
+    }
+}
